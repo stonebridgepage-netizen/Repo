@@ -1,3 +1,5 @@
+READY_TO_SHARE)
+   232      fi
 ~ $ nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'
    220      lock_path="$HOME/.hermes/state/instagram-post-fast/runner.lock"
    221      exec {lockfd}>"$lock_path"
@@ -12,8 +14,7 @@
    230      else
    231          trusted_args=(--publication-operation READY_TO_SHARE)
    232      fi
-~ $~ $ nl -ba .local/lib/instagram-broker/dispatcher.sh|sed-n'220,232p'
-sed-n220,232p: command not found
+~ $ nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'^C
 ~ $ nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'
    220      lock_path="$HOME/.hermes/state/instagram-post-fast/runner.lock"
    221      exec {lockfd}>"$lock_path"
@@ -28,3 +29,4 @@ sed-n220,232p: command not found
    230      else
    231          trusted_args=(--publication-operation READY_TO_SHARE)
    232      fi
+~ $
