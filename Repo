@@ -1,16 +1,5 @@
-~ $ grep -n -E '2>/dev/null|rm -f.*output|RESULT\|' .local/lib/instagram-broker/dispatcher.sh
-49:header=$(dd if=/dev/stdin bs=1 count=4 2>/dev/null | od -An -tu1)
-56:payload=$(dd if=/dev/stdin bs=1 count="$json_size" 2>/dev/null)
-87:    [ "$(stat -c '%F:%a' "$state" 2>/dev/null || true)" = 'regular file:600' ] || job_status_reject state_not_private_regular_file
-140:    [ "$("$ADB" -s "$serial" get-state 2>/dev/null || true)" = device ] || { frame_response '{"schema_version":1,"operation":"run-job","status":"ADB_ENDPOINT_REQUIRED","reason":"endpoint_unavailable"}'; exit 20; }
-166:    trap 'rm -f -- "${tmp:-}"; flock -u "${lockfd:-}" 2>/dev/null || true' RETURN
-169:        [ "$blocks" -eq 0 ] || dd if=/dev/stdin of="$tmp" bs=65536 iflag=fullblock count="$blocks" 2>/dev/null
-170:        [ "$remainder" -eq 0 ] || dd if=/dev/stdin of="$tmp" bs=1 count="$remainder" oflag=append conv=notrunc 2>/dev/null
-188:    sync -f "$tmp" 2>/dev/null || reject cache_write_failed
-191:    sync -f "$final" 2>/dev/null || reject cache_write_failed
-192:    sync -f "$CACHE" 2>/dev/null || reject cache_write_failed
-226:    trap 'rm -f -- "${output:-}"' RETURN
-240:        --publish-authorized false --startup-confirmed-main false "${trusted_args[@]}" >"$output" 2>/dev/null
-243:    result_line=$(grep '^RESULT|' "$output" | tail -n1 || true)
-244:    rm -f "$output"
+Android Debug Bridge version 1.0.41
+Version 35.0.2-android-tools
+Installed as /data/data/com.termux/files/usr/bin/adb
+Running on Linux 6.6.98-android15-8-pd6ff1cd-abogkiS937BXXS9CZG3-4k (aarch64)
 ~ $
