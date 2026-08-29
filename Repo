@@ -1,32 +1,4 @@
-READY_TO_SHARE)
-   232      fi
-~ $ nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'
-   220      lock_path="$HOME/.hermes/state/instagram-post-fast/runner.lock"
-   221      exec {lockfd}>"$lock_path"
-   222      flock -n "$lockfd" || reject runner_lock_busy
-   223      flock -u "$lockfd"
-   224      exec {lockfd}>&-
-   225      output=$(mktemp "$HOME/.hermes/state/.b13-runner.XXXXXX") || error_response runner_output_failed
-   226      trap 'rm -f -- "${output:-}"' RETURN
-   227      set +e
-   228      if [ "$publication_operation" = PUBLISH ]; then
-   229          trusted_args=(--publication-operation PUBLISH)
-   230      else
-   231          trusted_args=(--publication-operation READY_TO_SHARE)
-   232      fi
-~ $ nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'^C
-~ $ nl -ba .local/lib/instagram-broker/dispatcher.sh | sed -n '220,232p'
-   220      lock_path="$HOME/.hermes/state/instagram-post-fast/runner.lock"
-   221      exec {lockfd}>"$lock_path"
-   222      flock -n "$lockfd" || reject runner_lock_busy
-   223      flock -u "$lockfd"
-   224      exec {lockfd}>&-
-   225      output=$(mktemp "$HOME/.hermes/state/.b13-runner.XXXXXX") || error_response runner_output_failed
-   226      trap 'rm -f -- "${output:-}"' RETURN
-   227      set +e
-   228      if [ "$publication_operation" = PUBLISH ]; then
-   229          trusted_args=(--publication-operation PUBLISH)
-   230      else
-   231          trusted_args=(--publication-operation READY_TO_SHARE)
-   232      fi
+~ $ grep -n 'local job_id' .local/lib/instagram-broker/dispatcher.sh
+145:    local job_id=$1 state="$HOME/.hermes/state/instagram-post-fast/current-job.state" terminal_dir="$HOME/.hermes/state/instagram-post-fast/terminal" tombstone
+155:    local job_id=$1 media_sha=$2 media_size=$3 media_mime=$4 ext final tmp lockfd incoming_size incoming_sha                                               198:    local job_id=$1 media_sha=$2 media_size=$3 caption_b64=$4 caption_sha=$5 title_b64=$6 artist_b64=$7 expected_b64=$8 canonical_fp=$9 local_fp=${10} local_version=${11} reentry=${12}
 ~ $
