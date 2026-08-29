@@ -1,0 +1,10 @@
+~ $ grep -n 'runner."sha\|sha256."runner\|RUNNER' .locallibinstagram-broker/dispatcher.sh
+grep: .locallibinstagram-broker/dispatcher.sh: No such file or directory
+~ $ grep -n 'runner."sha\|sha256."runner\|RUNNER' .locallibinstagram-broker/dispatcher.shgrep -n 'runner.*sha\|sha256.*runner\|RUNNER' .local/lib/instagram-broker/dispatcher.sh
+grep: .locallibinstagram-broker/dispatcher.shgrep: No such file or directory
+grep: runner.*sha\|sha256.*runner\|RUNNER: No such file or directory
+.local/lib/instagram-broker/dispatcher.sh:14:RUNNER="${B14_RUNNER:-$HOME/.local/lib/instagram-broker/runner/instagram-post-fast-remote.sh}"
+.local/lib/instagram-broker/dispatcher.sh:16:RUNNER_SHA256=fe05ac0e65e32180045241e524e568aa40e66bec2e4d714732a6e1b7fe967f09
+.local/lib/instagram-broker/dispatcher.sh:212:    [ -f "$RUNNER" ] || reject runner_missing
+.local/lib/instagram-broker/dispatcher.sh:234:        "$RUNNER" --job-id "$job_id" --media "$media_path" \
+~ $
